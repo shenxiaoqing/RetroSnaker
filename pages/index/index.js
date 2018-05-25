@@ -65,7 +65,6 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    // console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -73,7 +72,6 @@ Page({
     })
   },
   tapName:function(e){
-    // console.log(e)
   },
   changeIndicatorDots: function (e) {
     this.setData({
