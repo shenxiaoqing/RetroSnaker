@@ -1,0 +1,61 @@
+/**index.wxss**/
+.userinfo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+   padding-right: 40rpx; 
+  border-radius:0 44rpx 44rpx 0;
+}
+
+.userinfo-avatar {
+  width: 66rpx;
+  height: 66rpx;
+   margin:0 30rpx; 
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  line-height: 88rpx;
+  font-size: 30rpx;
+}
+
+.user-motto{
+  display: block;
+  height: 200rpx;
+}
+.game{
+  width: 80%;
+  margin: 40rpx auto;
+}
+.to-game{
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  background: #ffb200;
+}
+.to-share{
+  background: #9f9;
+}
+.content{
+  position: fixed;
+  /* width: 100%;
+  height: 100%; */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.swiper-wrap{
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrap swiper-item,.swiper-wrap swiper-item image{
+  width: 100%;
+  height: 100%;
+}
