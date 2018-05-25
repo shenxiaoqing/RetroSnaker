@@ -162,30 +162,6 @@ Page({
       default:
     }
   },
-  changeLeft: function () {
-    // 向左移动
-    var arr = this.data.snake;
-    var len = this.data.snake.length;
-    var snakeHEAD = arr[len - 1][1];
-    var snakeTAIL = arr[0];
-    var ground = this.data.ground;
-    ground[snakeTAIL[0]][snakeTAIL[1]] = 0;
-    for (var i = 0; i < len - 1; i++) {
-      arr[i] = arr[i + 1];
-    };
-    var x = arr[len - 1][0];
-    var y = arr[len - 1][1] - 1;
-    arr[len - 1] = [x, y];
-    this.checkGame(snakeTAIL);
-    for (var i = 1; i < len; i++) {
-      ground[arr[i][0]][arr[i][1]] = 1;
-    }
-    this.setData({
-      ground: ground,
-      snake: arr
-    });
-    return true;
-  },
   changeRight: function () {
     // 蛇的数组
     var arr = this.data.snake;
@@ -208,6 +184,30 @@ Page({
     // 移动函数传参蛇尾位置
     this.checkGame(snakeTAIL);
     // 蛇经过的位置值为1
+    for (var i = 1; i < len; i++) {
+      ground[arr[i][0]][arr[i][1]] = 1;
+    }
+    this.setData({
+      ground: ground,
+      snake: arr
+    });
+    return true;
+  },
+  changeLeft: function () {
+    // 向左移动
+    var arr = this.data.snake;
+    var len = this.data.snake.length;
+    var snakeHEAD = arr[len - 1][1];
+    var snakeTAIL = arr[0];
+    var ground = this.data.ground;
+    ground[snakeTAIL[0]][snakeTAIL[1]] = 0;
+    for (var i = 0; i < len - 1; i++) {
+      arr[i] = arr[i + 1];
+    };
+    var x = arr[len - 1][0];
+    var y = arr[len - 1][1] - 1;
+    arr[len - 1] = [x, y];
+    this.checkGame(snakeTAIL);
     for (var i = 1; i < len; i++) {
       ground[arr[i][0]][arr[i][1]] = 1;
     }
